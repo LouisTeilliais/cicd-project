@@ -12,11 +12,11 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - dockerfile: ../../front-end-react
+          - dockerfile: ../front-end-react
             image: louis44220/front-end-react
-          - dockerfile: ../../order-service
+          - dockerfile: ../order-service
             image: louis44220/order-service
-          - dockerfile: ../../user-service
+          - dockerfile: ../user-service
             image: louis44220/user-service
 
     steps:
