@@ -33,5 +33,5 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build and push versioned images
         run: |
-          docker build -t dockerhubloginname/${{ matrix.context }}:${{ github.ref }} .
-          docker push dockerhubloginname/${{ matrix.context }}:${{ github.ref }}
+          docker build -t ${{secrets.DOCKERHUB_USERNAME}}/${{ matrix.context }}:${{ github.ref }} .
+          docker push ${{secrets.DOCKERHUB_USERNAME}}/${{ matrix.context }}:${{ github.ref }}
