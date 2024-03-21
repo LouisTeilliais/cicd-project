@@ -1,6 +1,9 @@
-name: Docker image build and push
+name: Docker image build and push version
 
-on: create
+on:
+  push:
+    branches:
+      - '^[0-9]+\.[0-9]+\.[0-9]+$'
 
 jobs:
   build-and-push:
@@ -30,7 +33,6 @@ jobs:
       - name: Extract branch name
         id: extract_branch
         run: echo "::set-output name=branch::$(echo ${GITHUB_REF#refs/heads/})"
-        shell: bash
       - name: Build and push ${{ matrix.context }}
         uses: docker/build-push-action@v5
         with:
