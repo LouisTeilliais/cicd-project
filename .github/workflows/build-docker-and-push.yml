@@ -12,11 +12,11 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - dockerfile: ../front-end-react
+          - context: front-end-react
             image: louis44220/front-end-react
-          - dockerfile: ../order-service
+          - context: order-service
             image: louis44220/order-service
-          - dockerfile: ../user-service
+          - context: user-service
             image: louis44220/user-service
 
     steps:
@@ -35,6 +35,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ${{ matrix.dockerfile }}
+          file: ${{ matrix.context }}
           push: true
           tags: ${{ matrix.image }}:${{ github.sha }}
