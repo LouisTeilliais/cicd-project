@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: front-end-react-container
-          image: louis44220/front-end-react:1.0.0
+          image: louis44220/front-end-react:1.0.1
           ports:
             - containerPort: 3000
