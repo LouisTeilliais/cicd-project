@@ -7,7 +7,7 @@ on:
 
 jobs:
   push_images:
-    if: startsWith(github.ref, 'refs/heads/') && startsWith(github.ref, 'refs/heads/v')
+    # if: startsWith(github.ref, 'refs/heads/') && startsWith(github.ref, 'refs/heads/v')
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
