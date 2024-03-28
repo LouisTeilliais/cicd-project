@@ -1,13 +1,13 @@
-FROM arm32v7/node:21-alpine3.18
+FROM node:16-alpine
 
-WORKDIR /app
+WORKDIR /front_app
 
 COPY package*.json ./
 
 RUN npm install
 
-COPY . .
+COPY . ./
 
 EXPOSE 3000
 
-CMD [ "npm", "run", "start" ] 
+CMD ["npm", "run", "start"]
